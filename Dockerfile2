@@ -1,3 +1,0 @@
-FROM test1:latest
-
-VOLUME ["/opt/zday3"]

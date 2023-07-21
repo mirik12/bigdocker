@@ -1,0 +1,18 @@
+FROM ubuntu:18.04
+
+RUN apt-get update && \
+    apt-get install -y python3-pip && \
+    apt-get autoclean && \
+    rm -rf /var/cache/apt/*
+
+COPY requirements.txt /opt/
+
+RUN pip3 install -f /opt/requirements.txt
+
+COPY . /opt/zday/ 
+
+WORKDIR /opt/zday
+
+EXPOSE 8000
+
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

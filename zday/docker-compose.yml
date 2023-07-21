@@ -1,0 +1,16 @@
+version: "2.3"
+
+services:
+  app:
+    build: /Users/mark/Downloads/rest/dev/bigdocker/zday/
+    container_name: app
+    hostname: app
+    ports: 
+      - "8001:8000"
+
+  pgdb:
+    image: postgres:latest
+    container_name: pgdb
+    hostname: pgdb
+    volumes:
+      - "/Users/mark/zday/dbdata:/var/lib/postgresql/data"
