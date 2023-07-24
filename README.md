@@ -1,4 +1,4 @@
-# bigdocker
+# bigdocker-django
 webapp with docker
 
 Plan
